@@ -1,6 +1,9 @@
+import { useContext } from "react"
 import { NavItems } from "../NavItems"
+import { CartContext } from "../../context/cartContext"
 
 export const Header = (props) => {
+    const {cartItemCount} = useContext(CartContext)
     //const companyName="Medtronic";
     return (
         <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
@@ -11,10 +14,8 @@ export const Header = (props) => {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <NavItems />
-                    <form class="d-flex">
-                        <input class="form-control me-sm-2" type="search" placeholder="Search" />
-                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                    </form>
+                    <label className="btn btn-danger">Cart Count :{cartItemCount}</label>
+
                 </div>
             </div>
         </nav>
