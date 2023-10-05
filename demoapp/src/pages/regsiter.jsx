@@ -1,5 +1,10 @@
+import { useApi } from "../hooks/useApi"
+
 export const Register =()=>{
+
+    const countryList = useApi("https://restcountries.com/v2/all",'get');
+
     return(
-        <h1>I am the Register Page</h1>
+        <h1>{JSON.stringify(countryList)}</h1>
     )
 }

@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 import { Textbox } from "./components/Textbox";
 import { register } from "./data/register";
 import { getData, getDataByAxios } from "./services";
+import { Register } from "./pages/regsiter";
 
 export const App =()=>{
   const nameOfTheCompany='Medtronic';
