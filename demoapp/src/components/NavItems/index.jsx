@@ -1,30 +1,37 @@
-export const NavItems = () => {
+import { useNavigate } from "react-router";
 
-    const products = [{
+export const NavItems = () => {
+    const navigate = useNavigate();
+    const navLinks = [{
         id: 1,
-        name: "Pace maker",
-        url: "/pace"
+        name: "Login",
+        url: "/login"
     },
     {
         id: 2,
-        name: "Oxymeter",
-        url: "/oxy"
+        name: "Register",
+        url: "/register"
     },
     {
         id: 3,
-        name: "Thermo meter",
-        url: "/thermo"
+        name: "Products",
+        url: "/products"
     },
     {
         id: 4,
-        name: "S8",
-        url: "/S8"
+        name: "Cart",
+        url: "/cart"
     }];
 
     const navContent = () => {
-        return products.map((item, index) => {
-            return (<li class="nav-item"  key={index}>
-                <a class="nav-link" href={item.url}>{item.name}</a>
+
+        return navLinks.map((item, index) => {
+
+            return (<li class="nav-item" key={index}>
+                <a class="nav-link" href="#" onClick={e => {
+                    navigate(item.url)
+                }}>{item.name}</a>
+                {/* <a class="nav-link" href={item.url} >{item.name}</a> */}
             </li>
             )
         })

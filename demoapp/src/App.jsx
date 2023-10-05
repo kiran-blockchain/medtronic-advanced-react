@@ -6,6 +6,7 @@ import { register } from "./data/register";
 import { getData, getDataByAxios } from "./services";
 import { Register } from "./pages/regsiter";
 import { CartContext } from "./context/cartContext";
+import { AppRoutes } from "./AppRoutes";
 
 export const App = () => {
   const nameOfTheCompany = 'Medtronic';
@@ -17,13 +18,8 @@ export const App = () => {
 
   return (
     <div>
-      <CartContext.Provider value={{cartItemCount:cart,setCartItem:addItemToCart}}>
         <Header companyName={nameOfTheCompany} />
-        <div className="container mt-5">
-
-          <Register />
-        </div>
-      </CartContext.Provider>
+        <AppRoutes/>
     </div>
   )
 };
