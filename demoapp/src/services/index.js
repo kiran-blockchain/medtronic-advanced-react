@@ -19,3 +19,12 @@ export const getDataByAxios = async (url) => {
         return ex;
     }
 }
+export const postDataByAxios = async (url,payload) => {
+    try {
+        const result = await axios.post(url,payload);
+        return result.data;
+    } catch (ex) {
+        console.log(ex);
+        return ex;
+    }
+}
