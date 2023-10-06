@@ -12,15 +12,20 @@ export const Register = () => {
         validationSchema: profileSchema,
         onSubmit: values => {
             console.log(values);
-        }
+        },
+
     })
+    const handleChange =(e)=>{
+        console.log("I am called");
+        formik.handleChange(e);
+    }
     return (
         <form>
             <div class="row mb-3">
                 <label for="username" class="col-sm-2 col-form-label">Enter Username</label>
                 <div class="col-sm-3 " >
                     <input type="text" class="form-control" id="username"
-                        onChange={formik.handleChange}
+                        onChange={handleChange}
                         onBlur={formik.handleBlur}
                         value={formik.values.username}
                         name="username" />

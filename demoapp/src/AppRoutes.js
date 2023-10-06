@@ -1,9 +1,10 @@
 import { Route, Routes } from "react-router"
 import { Login } from "./pages/login"
 import { Register } from "./pages/regsiter"
-import { Products } from "./pages/products"
+
 import { Cart } from "./pages/cart"
 import Protected from "./components/Protected"
+import Products from "./pages/products"
 
 export const AppRoutes = () => {
     return (
@@ -12,7 +13,7 @@ export const AppRoutes = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/products"
                 element={<Protected>
-                    <Products />
+                    <Products/>
                 </Protected>} />
             <Route path="/cart"
                 element={<Protected><Cart />
