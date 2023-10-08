@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+
+import { useEffect, useState, lazy, Suspense } from "react";
 import { Dropdown } from "./components/Dropdown";
 import { Header } from "./components/Header";
 import { Textbox } from "./components/Textbox";
@@ -8,6 +9,19 @@ import { Register } from "./pages/regsiter";
 import { CartContext } from "./context/cartContext";
 import { AppRoutes } from "./AppRoutes";
 import { AuthContext } from "./context/authContext";
+import { InputFocus } from "./components/Refdemo";
+import { DemoUsePrevious } from "./components/Refdemo/Index3";
+import { Toggle } from "./components/Toggle";
+
+import Dashboard from "./components/DemoMemo";
+import FilterProducts from "./components/FilterProducts";
+import { Parent } from "./components/Example1";
+import ParentComponent from "./components/DemoCallback";
+import ItemList from "./components/DemoCallback/index2";
+//import LazyDemo from "./components/LazyDemo";
+
+const LazyDemo = lazy(() => import('./components/LazyDemo'));
+const Products= lazy(()=>import("./pages/products"))
 
 export const App = () => {
   const nameOfTheCompany = 'Medtronic';
@@ -33,9 +47,20 @@ export const App = () => {
       isLoggedIn: isLoggedIn
     }}>
       <div>
-        <Header companyName={nameOfTheCompany} />
-        <AppRoutes />
+        {/* <Header companyName={nameOfTheCompany} />
+        <AppRoutes /> */}
+        {/* <InputFocus />
+        <DemoUsePrevious />
+        <Toggle />
+        <h1>I am first</h1>
+        <LazyDemo userId="1" />
+        <h1>I am lazy</h1>
+        {/* <Dashboard/> */}
+        {/* <Parent/> */}
+        {/* <ParentComponent/> */}
+        <ItemList/>
       </div>
+
     </AuthContext.Provider>
   )
 };
